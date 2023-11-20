@@ -3,7 +3,7 @@ const requestOptions = {
     redirect: 'follow'
   };
   
-  fetch("http://apiadvisor.climatempo.com.br/api/v1/weather/locale/5136/current?token=06abffe5c68ac687b65437cd2a421fc3", {mode:'no-cors'}, requestOptions)
+  fetch("http://apiadvisor.climatempo.com.br/api/v1/weather/locale/5136/current?token=06abffe5c68ac687b65437cd2a421fc3", requestOptions, {mode:'no-cors'},)
     .then(response => response.json())
     .then(temp_json => (console.log(temp_json),
     render_page(temp_json),
