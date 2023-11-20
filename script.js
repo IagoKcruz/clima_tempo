@@ -5,10 +5,11 @@ const requestOptions = {
   const url_ = "http://apiadvisor.climatempo.com.br/api/v1/weather/locale/5136/current?token=06abffe5c68ac687b65437cd2a421fc3";
   fetch(url_, requestOptions, {mode:'no-cors'})
     .then(response => response.json())
-    .then((temp_json => (console.log(temp_json),
+    .then(temp_json => {
+    console.log(temp_json),
     render_page(temp_json),
-    render_infos(temp_json))
-    ))
+    render_infos(temp_json);
+    })
     .catch(error => console.log('error', error));   
 
 
