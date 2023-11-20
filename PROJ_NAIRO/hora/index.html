@@ -1,0 +1,82 @@
+<!-- <body>
+    <div class="info">
+      Hoje é: <b><span class="date"></span></b><br>
+      A hora atual é: <b><span class="time"></span></b>
+    </div>
+    <script>
+      //  const viewDate = document.querySelector(".date");
+  const viewTime = document.querySelector(".time");
+
+const fullDate = new Date();
+//const day = fullDate.toLocaleString("pt-BR", { weekday: "long" });
+//const formatedDay = day.charAt(0).toUpperCase() + day.slice(1);
+
+const hours = String(fullDate.getHours()).padStart(2, "0");
+const minutes = String(fullDate.getMinutes()).padStart(2, "0");
+const seconds = String(fullDate.getSeconds()).padStart(2, "0");
+const fullTime = `${hours}:${minutes}:${seconds}`;
+
+viewTime.textContent = fullTime;
+    </script> -->
+
+  </body>
+
+  <html>
+	<body>
+		<div id="data-hora"></div>
+		<div class="meiaLua"></div>
+		<div class="stars"></div>
+<style>
+	body{
+		background-color: black;
+	}
+	.meiaLua {
+position: absolute;
+margin: auto;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+width: 100px;
+height: 100px;
+
+background-image: linear-gradient(-50deg,blue,black);
+border-radius: 50px;
+box-shadow: 25px 10px 10px 10px gray;
+}
+.stars{
+    position: absolute;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	box-shadow: 50px 30px white,
+    100px 80px white,
+    80px 120px white,
+    300px 20px white,
+    250px 130px white,
+    200px 50px white,
+    150px 100px white,
+    320px 100px white;
+}
+</style>
+
+		<script>
+			// Função para formatar 1 em 01
+			const zeroFill = n => {
+				return ('0' + n).slice(-2);
+			}
+
+			// Cria intervalo
+			const interval = setInterval(() => {
+				// Pega o horário atual
+				const now = new Date();
+
+				// Formata a data conforme dd/mm/aaaa hh:ii:ss
+				const dataHora = zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+				// Exibe na tela usando a div#data-hora
+				document.getElementById('data-hora').innerHTML = dataHora;
+			}, 1000);
+		</script>
+	</body>
+</html>
