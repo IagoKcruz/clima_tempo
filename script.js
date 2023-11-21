@@ -16,6 +16,7 @@ const requestOptions = {
 function render_page(info_json=[]){
     const img = document.getElementById("img");
     const cidade= document.querySelector("h2");
+    cidade.innerHTML = "";
     const graus = document.querySelector("#temp");
     const info1 = document.querySelector("#cond");
     const info2 = document.querySelector("#sens");
